@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Grease Box</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  
+  <a class="navbar-brand text-light" id="logo-text" href="#">
+    <span class="hidden-nav">BOM<span class="navba-text">|BLR</span></span>
+    <img src="assets/logo gb.png" alt="Logo" id="logo-img" width="100px">
+  </a>
+  
+  <!-- Hamburger button, visible only on small and medium screens -->
+  <button class="btn navbtn d-lg-none" type="button" data-toggle="collapse" data-target="#offcanvasMenu">
+    <img src="assets/BURGER MENU .png" alt="Menu" style="width: 30px; height: auto;">
+  </button>
+
+  <!-- Navbar links, visible on large screens and above -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Offers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Testimonials</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<!-- Custom offcanvas menu for mobile view -->
+<div class="collapse" id="offcanvasMenu">
+  <div class="p-4" style="height: 90%;">
+    <button type="button" class="close" data-toggle="collapse" data-target="#offcanvasMenu" aria-label="Close" style="font-size: 3.0em;">
+      <span aria-hidden="true" >&times;</span>
+    </button>
+    <ul class="navbar-nav" style="margin-top: 20%;">
+      <li class="nav-item active" id="navmob">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" id="navmob">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item" id="navmob">
+        <a class="nav-link" href="#">Offers</a>
+      </li>
+      <li class="nav-item" id="navmob">
+        <a class="nav-link" href="#">Testimonials</a>
+      </li>
+      <li class="nav-item" id="navmob">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<section class="hero-section overlay">
+  <div class="container" style="padding-top: 20vh;">
+    <div>
+      <img src="assets/logo gb.png" class="hero-logo">
+    </div>
+    <div class="hero-heading">
+      GREASE<span class="hero-heading-inner">BOX</span>
+    </div>
+    <div class="hero-content">
+      The best of car maintenance right at your doorstep!
+    </div>
+    <form class="form-inline justify-content-center">
+      <div class="row justify-content-center">
+        <div class="form-group mb-2">
+          <input type="email" class="form-control" id="search" placeholder="Search for car service">
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="why-heading">
+    Why <br class="mobile-break">Grease Box?
+  </div>
+  <div class="why-content">
+    Since 2019, we've been delivering unmatched car maintenance and repairs! Fcatering to all segments of cars, our team ensures you a stress-free car ownership!
+  </div>
+</section>
+
+<section class="frequent-section">
+  <div class="frequent-heading">
+    Frequently <br class="mobile-break">booked service
+  </div>
+  <div class="frequent-carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators" id="carousel-indi">
+        <li data-target="#myCarousel" data-slide-to="0" class="active" style="height: 10px;width: 10px;border-radius: 100%;"></li>
+        <li data-target="#myCarousel" data-slide-to="1" style="height: 10px;width: 10px;border-radius: 100%;"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="frequent-img w-100" src="assets/frequent-service/img2.jpg" height="100%" alt="car-service">
+        </div>
+        <div class="carousel-item">
+          <img class="frequent-img w-100" src="assets/frequent-service/img3.jpg" height="100%" alt="car-service">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="monsoon-offer">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="offer">
+                <div class="offer-content">
+                    <div class="offer-heading">MONSOONPROOF OFFER!</div>
+                    <p class="offer-free">FREE</p>
+                    <p class="offer-inner-content"><span style="font-size: 28px;font-weight: 600;">WIPER BLADES</span><br>ON STANDARD & SIGNATURE SERVICE PACKS</p>
+                    <button class="btn">Know more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="end-to-end-section">
+  <div class="end-heading">
+    End to End car care
+  </div>
+  <div class="end-content">
+    Taking care of all your car maintenance and repair needs such as,<br><br>
+    <p class="end-content-inner">
+    - MECHANICAL ISSUES<br>
+    - SOFTWARE ISSUES<br>
+    - COLLISION REPAIRS<br>
+    - INTERIOR DETAILING<br>
+    - PAINT CORRECTION<br>
+    - PPF<br>
+    - TYRES<br>
+    - WHEEL ALIGNMENT<br>
+    - INSURANCE RENEWAL<br><br></p>
+    AND MUCH MORE!  
+  </div>
+</section>
+
+<section class="review">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="testimonial">
+                <div class="testimonial-heading">Smiles to your miles :)</div>
+                <div class="testimonial-subheading">A happy customer everytime we wrench!</div>
+                <div class="testimonial-content">
+                    <img class="testimonial-logo" src="assets/google-logo.jpg"><br>
+                    <div style="justify-content: space-between;display: flex; padding-bottom: 5%;">
+                      <img class="quote-commas-1" src="assets/quote-1.png">
+                      <img class="quote-commas-2" src="assets/quote-2.png">
+                    </div>
+                    <p>Fast, fair and affordable, I took my car for oil change, the work was very much pristine and cheaper than my previous garage experience....Great work guy's..keep it up</p>
+                    <div class="customer-name">Rohit Amane</div>
+                    <div class="stars">
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="change-section">
+    <div class="column">
+      <img
+      src="assets/change-desktop.jpg"
+      class="change-img"
+      alt="Description of image">
+    </div>
+    <div class="column" style="background-color: white;">
+      <div class="change-text1">
+        Drive the change
+      </div>
+      <div class="change-text2">
+        Your cars discarded parts & fluids help us fund the education of underprivilaged kids
+      </div>
+    </div>
+</section>
+
+<footer class="footer text-start">
+  <h2 class="footer-heading">be posted</h2>
+  <p class="footer-sub-heading">Dont worry we wont spam you!</p>
+  <form class="form-inline justify-content-center">
+    <div class="form-group mb-2">
+      <input type="email" class="form-control" id="email" placeholder="email id">
+    </div>
+  </form>
+  <address class="mt-3 footer-heading">
+    Address: Plot 1/1A, Makhmali talao, next to neelkanth Apt, Thane West, Thane, Maharashtra 400601.
+  </address>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
