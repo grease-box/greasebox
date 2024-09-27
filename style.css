@@ -21,13 +21,11 @@
 
 
 .hero-section {
-  position: relative;
-  background-image: url('assets/video/01.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden; /* Ensures child elements don't overflow */
+    position: relative;
+    height: 100vh;
+    overflow: hidden; 
 }
+  
 .hero-section::before {
     content: "";
     position: absolute;
@@ -35,31 +33,61 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+    background-color: rgba(0, 0, 0, 0.7); 
     z-index: 1;
 }
 
 .hero-section * {
     position: relative;
-    z-index: 2; /* Ensures content is above the overlay */
+    z-index: 2;
 }
-.hero-heading{
+.hero-heading {
     font-size: 48px;
     color: white;
     font-weight: 700;
     padding-left: 7%;
     padding-bottom: 2%;
-}
-.hero-logo{
+}  
+.hero-logo {
     width: 20%;
     padding-left: 5%;
 }
-.hero-heading-inner{
+
+.hero-heading-inner {
     font-weight: 400;
 }
-.hero-section .form-control{
+
+.hero-section .form-control {
     border-radius: 50px;
     padding: 10px 20px;
+}
+
+.hero-content {
+    font-size: 28px;
+    color: rgb(82, 219, 209);
+    font-weight: 500;
+    padding-left: 7%;
+    padding-bottom: 7%;
+    line-height: 1;
+}
+@media (min-width: 1024px) {
+    .desktop-video-background {
+        display: block; 
+    }
+
+    .hero-section {
+        background-image: none;
+    }
+}
+
+.desktop-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 
@@ -93,14 +121,7 @@
 #search{
     width: 700px;
 }
-.hero-content{
-    font-size: 28px;
-    color: rgb(82, 219, 209);
-    font-weight: 500;
-    padding-left: 7%;
-    padding-bottom: 7%;
-    line-height: 1;
-}
+
 .why-section{
     background-image: url(assets/why-desktop.jpg);
     background-repeat: no-repeat;
@@ -133,7 +154,33 @@
     line-height: 1; 
 }
 .frequent-carousel .carousel-inner {
-    height: 80vh;
+    height: 70vh;
+}
+#frequent-mobile{
+    display: none;
+}
+.features {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 50px 20px;
+    justify-content: space-around;
+}
+.feature-container {
+    flex-basis: 30%;
+    margin-top: 10px;
+}
+
+.feature-container p {
+    color: #000;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.feature-container img {
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 
@@ -304,37 +351,44 @@
     .navbtn{
         display: none;
     }
-    .hero-section{
-        background-image: url(assets/home-mobile.jpg);
+    .hero-section {
+        background-image: url('assets/home-mobile.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 80vh;
     }
-    .hero-heading{
+    
+    .hero-heading {
         font-size: 32px;
         color: white;
         font-weight: 700;
         padding-left: 7%;
         padding-bottom: 5%;
     }
-    .hero-logo{
+    
+    .hero-logo {
         width: 40%;
         padding-left: 7%;
     }
-    #search{
-        width: auto;
-    }
-    .hero-heading-inner{
+    
+    .hero-heading-inner {
         font-weight: 400;
     }
-    .hero-section .form-control{
+    
+    .hero-section .form-control {
         border-radius: 50px;
         padding: 10px 20px;
     }
-    .hero-content{
+    
+    .hero-content {
         font-size: 28px;
         color: rgb(82, 219, 209);
         font-weight: 500;
         padding-left: 7%;
         padding-bottom: 40%;
+    }
+    #search{
+        width: auto;
     }
     .why-section {
         background-image: url(assets/why-mobile.jpg);
@@ -356,6 +410,12 @@
         width: 100%;
         font-size: 22px;
     }
+    #frequent-desktop{
+        display: none;
+    }
+    #frequent-mobile{
+        display: inline;
+    }
     .frequent-heading{
         font-size: 45px;
         font-weight: bold;
@@ -365,10 +425,11 @@
         color: white;    
     }
     #carousel-indi{
-        margin-bottom: -5px;
+        margin-bottom: 0px;
     }
     .frequent-carousel .carousel-inner {
-        height: 28vh;
+        height: 32vh;
+        background-color: #000;
     }
     .monsoon-offer{
         background: url(assets/offer-img.jpg);

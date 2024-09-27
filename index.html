@@ -75,6 +75,10 @@
 </div>
 
 <section class="hero-section overlay">
+  <video autoplay muted loop class="desktop-video-background">
+    <source src="assets/video/01.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <div class="container" style="padding-top: 20vh;">
     <div>
       <img src="assets/logo gb.png" class="hero-logo">
@@ -108,7 +112,18 @@
   <div class="frequent-heading">
     Frequently <br class="mobile-break">booked service
   </div>
-  <div class="frequent-carousel">
+  <div class="features" id="frequent-desktop">
+    <div class="feature-container">
+      <img src="assets/frequent-service/img2.jpg" alt="Feature">
+    </div>
+    <div class="feature-container">
+      <img src="assets/frequent-service/img3.jpg" alt="Feature">
+    </div>
+    <div class="feature-container">
+      <img src="assets/frequent-service/img2.jpg" alt="Feature">
+    </div>
+  </div>
+  <div class="frequent-carousel" id="frequent-mobile">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators" id="carousel-indi">
         <li data-target="#myCarousel" data-slide-to="0" class="active" style="height: 10px;width: 10px;border-radius: 100%;"></li>
@@ -125,6 +140,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="monsoon-offer">
   <div class="container">
