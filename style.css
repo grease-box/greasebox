@@ -153,6 +153,9 @@
     color: white;   
     line-height: 1; 
 }
+.frequent-img{
+    border-radius: 3%;
+}
 .frequent-carousel .carousel-inner {
     height: 70vh;
 }
