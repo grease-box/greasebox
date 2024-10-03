@@ -16,76 +16,87 @@ window.addEventListener('scroll', function() {
     }
 });
 
-const knowMoreDivs = document.querySelectorAll('.know-more');
-let carouselInterval;
 let currentIndex = 0;
+const totalItems = 4;
+const visibleItems = 3;
+let carouselInterval;
 
-// Function to move the carousel (same as before)
+const carouselItems = document.querySelectorAll('.explore-carousel-item');
+const knowMoreDivs = document.querySelectorAll('.know-more');
+
 function moveCarousel() {
-    const carouselItems = document.querySelectorAll('.explore-carousel-item');
+    currentIndex = (currentIndex + 1) % totalItems;
+
     carouselItems.forEach((item, index) => {
-        item.style.transition = 'transform 0.3s ease, z-index 0s';
+        let offset = (index - currentIndex + totalItems) % totalItems;
+
+        if (offset < visibleItems) {
+            item.style.display = 'flex';
+            item.style.opacity = '1';
+            
+            if (offset === 0) {
+                item.style.transform = 'translate(-50%, -50%) translateX(-220px) scale(0.8)';
+                item.style.zIndex = 1;
+            } else if (offset === 1) {
+                item.style.transform = 'translate(-50%, -50%) translateX(0) scale(1.2)';
+                item.style.zIndex = 2;
+            } else if (offset === 2) {
+                item.style.transform = 'translate(-50%, -50%) translateX(220px) scale(0.8)';
+                item.style.zIndex = 1;
+            }
+        } else {
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 500); // Match this to the CSS transition duration
+            item.style.opacity = '0';
+        }
     });
-
-    const prevIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
-    const nextIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
-
-    if (window.innerWidth <= 768) {
-        carouselItems[prevIndex].style.transform = 'translateX(-130px) scale(0.6)';
-        carouselItems[currentIndex].style.transform = 'translateX(0) scale(1.0)';
-        carouselItems[currentIndex].style.zIndex = 1;
-        carouselItems[nextIndex].style.transform = 'translateX(130px) scale(0.6)';
-    } else {
-        carouselItems[prevIndex].style.transform = 'translateX(-160px) scale(0.8)';
-        carouselItems[currentIndex].style.transform = 'translateX(0) scale(1.2)';
-        carouselItems[currentIndex].style.zIndex = 1;
-        carouselItems[nextIndex].style.transform = 'translateX(160px) scale(0.8)';
-    }
-
-    currentIndex = nextIndex;
 }
 
-// Function to toggle the "know more" div and stop/resume the carousel
-function toggleAccordion(index) {
-    const selectedDiv = knowMoreDivs[index];
-
-    // If the selected div is currently visible, hide it and resume the carousel
-    if (selectedDiv.style.display === 'block') {
-        selectedDiv.style.display = 'none';
-        resumeCarousel();  // Resume the carousel when the div is hidden
-    } else {
-        // Hide all know-more divs first
-        knowMoreDivs.forEach((div) => {
-            div.style.display = 'none';
-        });
-
-        // Show the clicked "know more" div and stop the carousel
-        selectedDiv.style.display = 'block';
-        stopCarousel();  // Stop the carousel when any know-more div is shown
-    }
-}
-
-// Start the carousel with an interval
 function startCarousel() {
     carouselInterval = setInterval(moveCarousel, 3500);
 }
 
-// Stop the carousel
 function stopCarousel() {
     clearInterval(carouselInterval);
 }
 
-// Resume the carousel
 function resumeCarousel() {
     startCarousel();
 }
 
-// Add event listener to adjust on window resize
-window.addEventListener('resize', moveCarousel);
+function toggleAccordion(index) {
+    const selectedDiv = knowMoreDivs[index];
 
-// Initially start the carousel when the page loads
+    if (selectedDiv.style.display === 'block') {
+        selectedDiv.style.display = 'none';
+        resumeCarousel();
+    } else {
+        knowMoreDivs.forEach((div) => div.style.display = 'none');
+        selectedDiv.style.display = 'block';
+        stopCarousel();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    startCarousel();  // Start the carousel on page load
-});
+    // Set initial positions
+    carouselItems.forEach((item, index) => {
+        if (index < visibleItems) {
+            item.style.display = 'flex';
+            item.style.opacity = '1';
+            if (index === 0) {
+                item.style.transform = 'translate(-50%, -50%) translateX(-220px) scale(0.8)';
+            } else if (index === 1) {
+                item.style.transform = 'translate(-50%, -50%) translateX(0) scale(1.2)';
+            } else if (index === 2) {
+                item.style.transform = 'translate(-50%, -50%) translateX(220px) scale(0.8)';
+            }
+        } else {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+        }
+    });
 
+    startCarousel();
+});
 
