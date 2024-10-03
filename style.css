@@ -142,6 +142,99 @@
     width: 45%;
     font-size: 32px;
 }
+.explore-services {
+    background-color: #000;
+}
+
+.explore-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for the heading and carousel */
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.explore-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: white;
+    text-align: right;
+    width: 100%;
+    justify-content: center;
+}
+
+.explore-carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+.explore-btn {
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore-carousel-item {
+    transition: all 0.3s ease;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.explore-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.explore-carousel-item:nth-child(1) {
+    transform: translateX(-160px) scale(0.8);
+}
+
+.explore-carousel-item:nth-child(2) {
+    transform: translateX(0) scale(1.2);
+    z-index: 1;
+}
+
+.explore-carousel-item:nth-child(3) {
+    transform: translateX(160px) scale(0.8);
+}
+.know-more{
+    height: auto;
+    display: none;
+}
+.know-more-main{
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: flex-end;
+}
+.know-more-container{
+    margin-right: 10%;
+    background-color: #00A99D;
+    width: 30%;
+    padding: 20px;
+    border-radius: 5%;
+    font-weight: 400;
+    font-size: 22px;
+}
+.know-more-heading{
+    color: white;
+    font-size: 26px;
+}
+
 .frequent-heading{
     padding-top: 3%;
     padding-bottom: 3%;
@@ -193,13 +286,12 @@
     object-fit: cover;
 }
 .monsoon-offer{
-    background: url(assets/offer-img.jpg);
+    background: url(assets/offer-img-desktop.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size:cover;
     height: 100vh;
 }
 .offer {
-    margin-top: 20%;
     text-align: center;
     padding: 30px;
     border-radius: 8px;
@@ -393,6 +485,40 @@
     #search{
         width: auto;
     }
+    .explore-heading{
+        font-size: 40px;
+        justify-content: center;
+        text-align: center;
+    }
+    .explore-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .explore-carousel-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    .know-more-main{
+        padding-bottom: 5%;
+        display: flex;
+        justify-content: center;
+    }
+    .know-more-container{
+        margin-right: 0px;
+        background-color: #00A99D;
+        width: 80%;
+        padding: 20px;
+        border-radius: 5%;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    .know-more-heading{
+        color: white;
+        font-size: 20px;
+    }
+    
     .why-section {
         background-image: url(assets/why-mobile.jpg);
         background-repeat: no-repeat;
@@ -439,6 +565,13 @@
         background-repeat: no-repeat;
         background-size: 100%;
         height: auto;
+    }
+    .monsoon-container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
     }
     .offer {
         margin-top: 60%;
