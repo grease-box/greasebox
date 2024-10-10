@@ -1,3 +1,23 @@
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#whatsapp-button img {
+    width: 40px;
+    height: auto;
+}
+
 .navbar-brand img {
     width: 50px;
     height: auto;
@@ -306,10 +326,13 @@
     border-radius: 8px;
 }
 .offer-content {
-    background-color: #00A99D;
+    background-color: white;
     color: black;
     border-radius: 8px;
     padding-bottom: 5%;
+    align-content: center;
+    height: 40vh;
+    background-color: white;
 }
 .offer-heading{
     margin-left: -10px;
@@ -497,7 +520,7 @@
     .explore-heading{
         font-size: 40px;
         justify-content: center;
-        text-align: center;
+        text-align: left;
     }
     .explore-main {
         display: grid;
@@ -508,6 +531,22 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+    }
+    .explore-carousel-item:nth-child(1) {
+        transform: translateX(-50px) scale(0.6);
+    }
+    
+    .explore-carousel-item:nth-child(2) {
+        transform: translateX(0) scale(1);
+        z-index: 1;
+    }
+    
+    .explore-carousel-item:nth-child(3) {
+        transform: translateX(50px) scale(0.6);
+    }
+    
+    .explore-carousel-item:nth-child(4) {
+        display: none;
     }
     .know-more-main{
         padding-bottom: 5%;
@@ -570,10 +609,10 @@
         background-color: #000;
     }
     .monsoon-offer{
-        background: url(assets/offer-img.jpg);
+        background: url(assets/offer-2.jpg);
         background-repeat: no-repeat;
         background-size: 100%;
-        height: auto;
+        height: 80vh;
     }
     .monsoon-container{
         justify-content: center;
@@ -589,6 +628,7 @@
         border-radius: 8px;
     }
     .offer-content {
+        display: none;
         background-color: #00A99D;
         color: black;
         border-radius: 8px;
