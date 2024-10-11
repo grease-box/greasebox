@@ -391,7 +391,6 @@
     padding-left: 10%;
     font-family: "Montserrat", sans-serif;
     font-size: 22px;
-    font-weight: 600;
 }
 .end-content-inner{
     text-align: left;
@@ -754,6 +753,11 @@
     }
     .change-img{
         height: 30vh;
+    }
+}
+@media only screen and (min-width: 390px) {
+    .end-to-end-section{
+        height: 70vh;
     }
 }
   
