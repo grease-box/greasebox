@@ -24,6 +24,7 @@ const visibleItems = 3;
 let carouselInterval;
 let touchStartX = 0;
 let touchEndX = 0;
+let isTransitioning = false;
 
 const carouselItems = document.querySelectorAll('.explore-carousel-item');
 const knowMoreDivs = document.querySelectorAll('.know-more');
@@ -40,8 +41,13 @@ function getResponsiveValues() {
 }
 
 function moveCarousel(direction = 1) {
+    if (isTransitioning) return;
+    isTransitioning = true;
     currentIndex = (currentIndex + direction + totalItems) % totalItems;
     updateCarousel();
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 500); // Match this with your CSS transition duration
 }
 
 function updateCarousel() {
@@ -67,6 +73,7 @@ function updateCarousel() {
 }
 
 function startCarousel() {
+    stopCarousel(); // Clear any existing interval
     carouselInterval = setInterval(() => moveCarousel(1), 3500);
 }
 
@@ -74,12 +81,9 @@ function stopCarousel() {
     clearInterval(carouselInterval);
 }
 
-function resumeCarousel() {
-    startCarousel();
-}
-
 function handleTouchStart(e) {
     touchStartX = e.touches[0].clientX;
+    stopCarousel();
 }
 
 function handleTouchMove(e) {
@@ -87,14 +91,31 @@ function handleTouchMove(e) {
 }
 
 function handleTouchEnd() {
-    if (touchStartX - touchEndX > 75) {
-        moveCarousel(1); // Swipe left
-    } else if (touchEndX - touchStartX > 75) {
-        moveCarousel(-1); // Swipe right
+    const swipeDistance = touchEndX - touchStartX;
+    if (Math.abs(swipeDistance) > 75) {
+        if (swipeDistance > 0) {
+            moveCarousel(-1); // Swipe right
+        } else {
+            moveCarousel(1); // Swipe left
+        }
     }
     touchStartX = 0;
     touchEndX = 0;
+
+    setTimeout(startCarousel, 1000);
 }
+
+function initCarousel() {
+    updateCarousel();
+    startCarousel();
+
+    const carousel = document.querySelector('.explore-carousel');
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
+    carousel.addEventListener('touchend', handleTouchEnd);
+}
+
+document.addEventListener('DOMContentLoaded', initCarousel);
 
 function toggleAccordion(index) {
     const selectedDiv = knowMoreDivs[index];
