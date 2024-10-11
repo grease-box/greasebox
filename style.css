@@ -258,7 +258,7 @@
 }
 .know-more-container{
     margin-right: 10%;
-    background-color: #01b5b1;
+    background-color: #53dbd1;
     width: 30%;
     padding: 20px;
     border-radius: 5%;
@@ -377,7 +377,7 @@
 
 .end-to-end-section{
     height: 75vh;
-    background-color: #01b5b1;
+    background-color: #53dbd1;
 }
 .end-heading{
     padding-left: 10%;
@@ -404,7 +404,7 @@
     font-family: "Montserrat", sans-serif;
     text-align: left;
     font-size: 38px;
-    color: #01b5b1;
+    color: #53dbd1;
     font-weight: 700;
     line-height: 1;
     padding-bottom: 4%;
@@ -427,7 +427,7 @@
 }
 .testimonial-content {
     font-family: "Montserrat", sans-serif;
-    background-color: #01b5b1;
+    background-color: #53dbd1;
     color: #ffffff;
     padding: 20px;
     border-radius: 8px;
@@ -461,7 +461,7 @@
     align-items: center;
 }
 .change-text1{
-    color: #01b5b1;
+    color: #53dbd1;
     line-height: 1;
     font-family: "Montserrat", sans-serif;
     font-size: 48px;
@@ -571,7 +571,7 @@
     }
     .know-more-container{
         margin-right: 0px;
-        background-color: #01b5b1;
+        background-color: #53dbd1;
         width: 80%;
         padding: 20px;
         border-radius: 5%;
@@ -645,7 +645,7 @@
     }
     .offer-content {
         display: none;
-        background-color: #01b5b1;
+        background-color: #53dbd1;
         color: black;
         border-radius: 8px;
         padding-bottom: 10%;
@@ -742,6 +742,9 @@
   and (max-width: 812px) and (orientation: portrait) { 
     .hero-section{
         height: 100vh;
+    }
+    .end-to-end-section{
+        height: 70vh;
     }
     .why-section{
         height: 80vh;
