@@ -689,10 +689,9 @@
     }
     .end-heading{
         padding-left: 5%;
-        padding-top: 5%;
+        padding-top: 10%;
     }
     .end-heading img{
-        margin-top: auto;
         height: 150px;
     }
     .end-content{
