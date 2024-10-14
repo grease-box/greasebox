@@ -374,6 +374,11 @@
 .offer-content .btn:hover {
     background-color: #f1f1f1;
 }
+.ios-end-to-end-section{
+    margin-top: 25%;
+    height: auto;
+    background-color: #53dbd1;
+}
 
 .end-to-end-section{
     height: auto;

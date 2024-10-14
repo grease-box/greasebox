@@ -17,6 +17,12 @@ window.addEventListener('scroll', function() {
     }
 });
 
+///end to end bug
+if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+    // Apply iOS-specific class to end-to-end-section
+    document.querySelector('.end-to-end-section').classList.add('ios-end-to-end');
+}
+
 // Carousel variables
 let currentIndex = 0;
 const totalItems = 4;
