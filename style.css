@@ -242,6 +242,28 @@
     display: none;
 }
 
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    background-color: #aaa; /* Inactive indicator color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #fff; /* Active indicator color */
+}
+
+
+
 .know-more{
     height: auto;
     display: none;

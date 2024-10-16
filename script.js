@@ -40,6 +40,34 @@ function getResponsiveValues() {
     }
 }
 
+function createIndicators() {
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    indicatorsContainer.innerHTML = ''; // Clear existing indicators
+
+    // Create indicators based on totalItems
+    for (let i = 0; i < totalItems; i++) {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (i === currentIndex) {
+            indicator.classList.add('active');
+        }
+
+        // Add click event to navigate to the corresponding item
+        indicator.addEventListener('click', () => {
+            moveCarousel(i - currentIndex);
+        });
+
+        indicatorsContainer.appendChild(indicator);
+    }
+}
+
+function updateIndicators() {
+    const indicators = document.querySelectorAll('.indicator');
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+    });
+}
+
 function moveCarousel(direction = 1) {
     if (isTransitioning) return;
     isTransitioning = true;
@@ -73,6 +101,7 @@ function updateCarousel() {
             item.style.transform = '';   // Reset transform
         }
     });
+    updateIndicators();
 }
 
 function startCarousel() {
@@ -109,6 +138,7 @@ function handleTouchEnd() {
 }
 
 function initCarousel() {
+    createIndicators();
     updateCarousel();
     startCarousel();
 
