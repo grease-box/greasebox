@@ -208,8 +208,9 @@
 }
 
 .explore-carousel-item {
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
     opacity: 0;
+    visibility: hidden;
     left: 50%;
     top:50%;
     width: 150px;
@@ -230,17 +231,11 @@
 }
 
 /* Show 3 items with scaling and translations for positioning */
-.explore-carousel-item:nth-child(1) {
-    transform: translateX(-200px) scale(0.8);
-}
-
-.explore-carousel-item:nth-child(2) {
-    transform: translateX(0) scale(1.2);
-    z-index: 1;
-}
-
+.explore-carousel-item:nth-child(1),
+.explore-carousel-item:nth-child(2),
 .explore-carousel-item:nth-child(3) {
-    transform: translateX(200px) scale(0.8);
+    opacity: 1;
+    visibility: visible;
 }
 
 .explore-carousel-item:nth-child(4) {

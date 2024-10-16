@@ -56,8 +56,9 @@ function updateCarousel() {
     carouselItems.forEach((item, index) => {
         const position = (index - currentIndex + carouselItems.length) % carouselItems.length;
         if (position < visibleItems) {
-            item.style.display = 'flex';
-            item.style.opacity = '1';
+            item.style.display = 'flex'; // Keep the items in the flow
+            item.style.opacity = '1';    // Fade-in effect
+            item.style.visibility = 'visible'; // Smooth visibility
             if (position === 0) {
                 item.style.transform = `translate(-50%, -50%) translateX(-${translateOffset}px) scale(${scaleSides})`;
             } else if (position === 1) {
@@ -66,8 +67,10 @@ function updateCarousel() {
                 item.style.transform = `translate(-50%, -50%) translateX(${translateOffset}px) scale(${scaleSides})`;
             }
         } else {
-            item.style.display = 'none';
-            item.style.opacity = '0';
+            // Smoothly hide the item
+            item.style.opacity = '0';    // Fade-out effect
+            item.style.visibility = 'hidden'; // Hide visibility after fade-out
+            item.style.transform = '';   // Reset transform
         }
     });
 }
