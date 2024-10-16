@@ -374,11 +374,22 @@
 .offer-content .btn:hover {
     background-color: #f1f1f1;
 }
-.ios-end-to-end-section{
-    margin-top: 25%;
-    height: auto;
-    background-color: #53dbd1;
-}
+.carousel-btn {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255);
+    border-radius: 50px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
 
 .end-to-end-section{
     height: auto;
