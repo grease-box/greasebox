@@ -5,15 +5,18 @@ $('#offcanvasMenu').on('show.bs.collapse', function () {
     $('#offcanvasMenuContent').removeClass('show');
 });
 
-// Header scroll effect
+// Header scroll effect and WhatsApp button visibility
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     const heroSection = document.querySelector('.hero-section');
+    const whatsappButton = document.getElementById('whatsapp-button');
     
     if (heroSection && window.scrollY > heroSection.offsetHeight - header.offsetHeight) {
         header.classList.add('scrolled');
+        whatsappButton.style.display = "flex"; 
     } else {
         header.classList.remove('scrolled');
+        whatsappButton.style.display = "none";
     }
 });
 
@@ -32,7 +35,7 @@ const knowMoreDivs = document.querySelectorAll('.know-more');
 function getResponsiveValues() {
     const screenWidth = window.innerWidth;
     if (screenWidth < 768) {
-        return { translateOffset: 130, scaleCenter: 1, scaleSides: 0.8 };
+        return { translateOffset: 130, scaleCenter: 1, scaleSides: 0.6 };
     } else if (screenWidth < 1024) {
         return { translateOffset: 150, scaleCenter: 1.1, scaleSides: 0.85 };
     } else {
