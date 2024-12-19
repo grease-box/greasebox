@@ -500,13 +500,13 @@
     color: #53dbd1;
     line-height: 1;
     font-family: "Montserrat", sans-serif;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     padding-top: 10%;
 }
 .change-text2{
-    font-size: 32px;
+    font-size: 30px;
     font-family: "Montserrat", sans-serif;
     padding: 10%;
     line-height: 1;
@@ -764,8 +764,8 @@
         padding-left: 5%;
     }
     .footer-heading{
-        text-align: left;
-        font-size: 22px;
+        text-align: center;
+        font-size: 18px;
     }
     .footer-sub-heading{
         text-align: left;
